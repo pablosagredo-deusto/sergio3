@@ -11,31 +11,18 @@ import javafx.stage.Stage;
 
 public class RegisterController {
     @FXML
-    public Label invalidLogin;
-    @FXML
-    private Button registerButton;
-    @FXML
-    public Button loginButton;
-    @FXML
-    public TextField UsernameTextField;
-    @FXML
-    public PasswordField PasswordTextField;
+    private Button acceptButton;
+    private Button exitButton;
 
     @FXML
-    public void onLoginButton(ActionEvent event) {
-        if (UsernameTextField.getText().isBlank() == false && PasswordTextField.getText().isBlank() == false){
-            invalidLogin.setText("Trying to log in");
-            //checklogin in backend launch catalog interface
-        }else{
-            invalidLogin.setText("Please enter username and password");
-        }
-
+    public void onExitButton(ActionEvent event) {
+        Stage stage = (Stage) exitButton.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
-    public void onRegisterButton(ActionEvent event) {
-        Stage stage = (Stage) registerButton.getScene().getWindow();
-        stage.close();
+    public void onAcceptButton(ActionEvent event) {
+            //CREATE USER WITH DATA AND SEND TO BACKEND -- PENDING
     }
 
 
