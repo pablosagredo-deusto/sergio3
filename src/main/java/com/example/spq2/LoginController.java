@@ -31,6 +31,8 @@ public class LoginController {
         if (!UsernameTextField.getText().isBlank() && !PasswordTextField.getText().isBlank()){
             invalidLogin.setText("Trying to log in");
             //CHECK IF LOGIN IS CORRECT AND LAUNCH CATALOG UI
+
+            //NEED TO CONNECT TO BACKEND HERE
         }else{
             invalidLogin.setText("Please enter username and password");
         }
