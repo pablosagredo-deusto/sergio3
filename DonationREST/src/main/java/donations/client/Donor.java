@@ -161,7 +161,7 @@ public class Donor implements Runnable {
 				try {
 					//revisar
 					User user = getUserInfo();
-					System.out.println("Metodo runn print: " + user.getUsername());
+					System.out.println("Metodo runns print: " + user.getUsername());
 				} catch (DonationException e) {
 					System.out.println(e.getMessage());
 				}
