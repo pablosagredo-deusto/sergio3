@@ -12,7 +12,7 @@ public class DonationCollector {
    protected User user1 = new User("sergio", "1234");
    protected User user2 = new User("pablo", "1234");
 
-    listUser.add(new User("sergio", "1234"));
+    //listUser.add(new User("sergio", "1234"));
 
     private static boolean check = false;
     //here is proccessed info on methods

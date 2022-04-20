@@ -27,7 +27,7 @@ import donations.serialization.User;
 
 import donations.util.DonationException;
 
-public class Donor implements Runnable {
+public class Login implements Runnable {
 	private JFrame frame;
 	private JButton buttonEnd;
 	private JButton buttonLogin;
@@ -42,7 +42,7 @@ public class Donor implements Runnable {
 	private Thread thread;
 	private final AtomicBoolean running = new AtomicBoolean(false);
 
-	public Donor(String hostname, String port) {
+	public Login(String hostname, String port) {
 		client = ClientBuilder.newClient();
 		webTarget = client.target(String.format("http://%s:%s/rest", hostname, port));
 
@@ -120,7 +120,9 @@ public class Donor implements Runnable {
 		registerButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
+				panel.setVisible(false);
+				Registration registration=new Registration();
+				//System.exit(0);
 			}
 
 		});
@@ -181,6 +183,6 @@ public class Donor implements Runnable {
 		String hostname = args[0];
 		String port = args[1];
 
-		Donor donor = new Donor(hostname, port);
+		Login login = new Login(hostname, port);
 	}
 }

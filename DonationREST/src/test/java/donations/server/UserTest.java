@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 import donations.serialization.User;
 
 
-public class DonationCollectorTest {
+public class UserTest {
 
     private DonationCollector donationCollector;
     private User user;

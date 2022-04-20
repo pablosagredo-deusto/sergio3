@@ -1,9 +1,8 @@
+donations\client\Login$1.class
+donations\client\Login$2.class
+donations\client\Login.class
 donations\util\WindowManager.class
 donations\util\DonationException.class
-donations\server\DonationManager.class
-donations\client\Donor$2.class
 donations\server\DonationServer.class
-donations\client\Donor$1.class
 donations\server\DonationCollector.class
-donations\client\Donor.class
 donations\serialization\User.class
