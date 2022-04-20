@@ -7,8 +7,8 @@ import java.awt.event.*;
 
 public class Registration extends JFrame implements ActionListener
 {
-    JLabel l1, l2, l3, l4, l5, l6, l7, l8;
-    JTextField tf1, tf2, tf5, tf6, tf7;
+    JLabel l1, l2, l3, l4, l5, l6, l7, l8,l9;
+    JTextField tf1, tf2, tf5, tf6, tf7,tf8;
     JButton btn1, btn2;
     JPasswordField p1, p2;
     Registration()
@@ -28,6 +28,7 @@ public class Registration extends JFrame implements ActionListener
         l6 = new JLabel("Adress:");
         l7 = new JLabel("Card No.:");
         l8 = new JLabel("Phone:");
+        l9 = new JLabel("Username");
         tf1 = new JTextField();
         tf2 = new JTextField();
         p1 = new JPasswordField();
@@ -35,6 +36,7 @@ public class Registration extends JFrame implements ActionListener
         tf5 = new JTextField();
         tf6 = new JTextField();
         tf7 = new JTextField();
+        tf8 = new JTextField();
         btn1 = new JButton("Submit");
         btn2 = new JButton("Clear");
         btn1.addActionListener(this);
@@ -47,6 +49,7 @@ public class Registration extends JFrame implements ActionListener
         l6.setBounds(80, 230, 200, 30);
         l7.setBounds(80, 270, 200, 30);
         l8.setBounds(80, 310, 200, 30);
+        l9.setBounds(80, 350, 200, 30);
         tf1.setBounds(300, 70, 200, 30);
         tf2.setBounds(300, 110, 200, 30);
         p1.setBounds(300, 150, 200, 30);
@@ -54,6 +57,7 @@ public class Registration extends JFrame implements ActionListener
         tf5.setBounds(300, 230, 200, 30);
         tf6.setBounds(300, 270, 200, 30);
         tf7.setBounds(300, 310, 200, 30);
+        tf8.setBounds(300, 350, 200, 30);
         btn1.setBounds(50, 350, 100, 30);
         btn2.setBounds(170, 350, 100, 30);
         add(l1);
@@ -70,7 +74,9 @@ public class Registration extends JFrame implements ActionListener
         add(l7);
         add(tf6);
         add(l8);
+        add(l9);
         add(tf7);
+        add(tf8);
         add(btn1);
         add(btn2);
     }
@@ -88,6 +94,7 @@ public class Registration extends JFrame implements ActionListener
             String s5 = tf5.getText();
             String s6 = tf6.getText();
             String s7 = tf7.getText();
+            String s10 = tf8.getText();
             if (s8.equals(s9))
             {
                 try

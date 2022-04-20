@@ -19,8 +19,7 @@ public class DonationCollector {
     public boolean login(String username, String password) {
         synchronized(this) {
                 System.out.println("entered in donation collector login method");
-
-
+                //falta chequear sql
                 return true;
         }
     }
