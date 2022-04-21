@@ -18,7 +18,7 @@ public class Registration extends JFrame implements ActionListener
         setSize(600, 500);
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setTitle("Registration Form in Java");
+        setTitle("Registratiosn Form in Java");
         l1 = new JLabel("REGISTER");
         l1.setForeground(Color.black);
         l2 = new JLabel("Name:");
