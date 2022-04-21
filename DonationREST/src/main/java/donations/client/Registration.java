@@ -23,7 +23,7 @@ public class Registration extends JFrame implements ActionListener
         l1.setForeground(Color.black);
         l2 = new JLabel("Name:");
         l3 = new JLabel("Last Name:");
-        l4 = new JLabel("Create Passowrd:");
+        l4 = new JLabel("Create Password:");
         l5 = new JLabel("Confirm Password:");
         l6 = new JLabel("Adress:");
         l7 = new JLabel("Card No.:");

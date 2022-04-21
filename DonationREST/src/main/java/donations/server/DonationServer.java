@@ -26,9 +26,10 @@ public class DonationServer {
 	public Response login(User user){
 		System.out.println("Metodo post en donat");
 		boolean checkLogin=false;
+		//se lanza login en collector
 		checkLogin = donationCollector.login(user.getUsername(),user.getPassword());
 		System.out.println("Received login: " + user.getUsername() +" booleano de login " +checkLogin);
-		return Response.ok().build();
+		return Response.ok(checkLogin).build();
 	}
 
 	@GET

@@ -24,6 +24,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import donations.serialization.User;
+import donations.client.*;
 
 import donations.util.DonationException;
 
@@ -101,7 +102,9 @@ public class Login implements Runnable {
 					String password=String.valueOf(passwordText.getPassword());
 					message.setText("Trying to login");
 					try {
-						login(username, password);
+						if (login(username, password)){
+							Home home = new Home();
+						}
 						System.out.println("Lanzando login desde boton");
 					} catch (DonationException ex) {
 						ex.printStackTrace();
@@ -129,17 +132,21 @@ public class Login implements Runnable {
 		panel.add(registerButton);
 	}
 	
-	public void login(String username, String password) throws DonationException {
+	public boolean login(String username, String password) throws DonationException {
 		WebTarget donationsWebTarget = webTarget.path("collector/donations");
 		Invocation.Builder invocationBuilder = donationsWebTarget.request(MediaType.APPLICATION_JSON);
-
+		Boolean bool=false;
 		User user = new User(username,password);
 		Response response = invocationBuilder.post(Entity.entity(user, MediaType.APPLICATION_JSON));
 		if (response.getStatus() != Status.OK.getStatusCode()) {
+			 bool = response.readEntity(Boolean.class);
 			throw new DonationException("" + response.getStatus());
+
 		} else {
 			System.out.println("Enviado con exito");
+
 		}
+		return bool;
 	}
 
 	public User getUserInfo() throws DonationException {

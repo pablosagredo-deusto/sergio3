@@ -16,6 +16,7 @@ public class DonationCollector {
 
     private static boolean check = false;
     //here is proccessed info on methods
+    //sql pending
     public boolean login(String username, String password) {
         synchronized(this) {
                 System.out.println("entered in donation collector login method");
