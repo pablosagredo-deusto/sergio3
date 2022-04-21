@@ -1,9 +1,14 @@
 package supermarket.server;
 
+
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 import supermarket.serialization.User;
+import supermarket.sql.ConnectionSQL;
+
+import javax.swing.*;
 
 
 public class SupermarketServer {
@@ -21,7 +26,22 @@ public class SupermarketServer {
         synchronized(this) {
                 System.out.println("entered in donation collector login method");
                 //falta chequear sql
-                return true;
+                String bases="";
+                try {
+                    Statement sql = ConnectionSQL.getConnection().createStatement();
+                    String query="SELECT name FROM master.dbo.sysdatabases";
+                    ResultSet result = sql.executeQuery(query);
+
+                    while (result.next()){
+                        bases += result.getString(1) + "\n" ;
+                    }
+
+                    JOptionPane.showMessageDialog(null,bases);
+
+                } catch (SQLException e) {
+                    System.out.println("ERROR LANZANDO QUERY -->" + e.toString());
+                }
+            return true;
         }
     }
 
