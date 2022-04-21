@@ -101,10 +101,13 @@ public class Login implements Runnable {
 					String password=String.valueOf(passwordText.getPassword());
 					message.setText("Trying to login");
 					try {
+						System.out.println("------------------------------------------");
+						System.out.println("1. entra en el if login y mira si lanza home");
 						if (login(username, password)){
 							Home home = new Home();
+							System.out.println("------------------------------------------");
+							System.out.println("3. lanza home");
 						}
-						System.out.println("Lanzando login desde boton");
 					} catch (SupermarketException ex) {
 						ex.printStackTrace();
 					}
@@ -137,12 +140,16 @@ public class Login implements Runnable {
 		Boolean bool=false;
 		User user = new User(username,password);
 		Response response = invocationBuilder.post(Entity.entity(user, MediaType.APPLICATION_JSON));
+		System.out.println("estado de response status " + response.getStatusInfo());
 		if (response.getStatus() != Status.OK.getStatusCode()) {
-			 bool = response.readEntity(Boolean.class);
+			System.out.println("falla el login");
 			throw new SupermarketException("" + response.getStatus());
 
+
 		} else {
-			System.out.println("Enviado con exito");
+			System.out.println("1.2 Login desde login ventana");
+			bool = response.readEntity(Boolean.class);
+			System.out.println("1.3 Booleano-->  " + bool);
 
 		}
 		return bool;
