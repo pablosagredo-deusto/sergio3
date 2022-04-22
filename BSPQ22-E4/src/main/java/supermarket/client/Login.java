@@ -24,7 +24,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import supermarket.client.*;
-import supermarket.serialization.User;
+import supermarket.domain.User;
 import supermarket.util.SupermarketException;
 
 public class Login implements Runnable {
@@ -138,7 +138,9 @@ public class Login implements Runnable {
 		WebTarget supermarketWebTarget = webTarget.path("server/supermarket");
 		Invocation.Builder invocationBuilder = supermarketWebTarget.request(MediaType.APPLICATION_JSON);
 		Boolean bool=false;
-		User user = new User(username,password);
+		User user = new User();
+		user.setUsername(username);
+		user.setPassword(password);
 		Response response = invocationBuilder.post(Entity.entity(user, MediaType.APPLICATION_JSON));
 		System.out.println("estado de response status " + response.getStatusInfo());
 		if (response.getStatus() != Status.OK.getStatusCode()) {

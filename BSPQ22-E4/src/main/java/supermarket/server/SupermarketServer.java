@@ -1,11 +1,11 @@
 package supermarket.server;
 
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import supermarket.serialization.User;
+import supermarket.domain.Order;
+import supermarket.domain.User;
 import supermarket.sql.ConnectionSQL;
 
 import javax.swing.*;
@@ -13,13 +13,10 @@ import javax.swing.*;
 
 public class SupermarketServer {
 
-   protected List<User> listUser = new ArrayList<>();
-   protected User user1 = new User("sergio", "1234");
-   protected User user2 = new User("pablo", "1234");
+    protected List<User> listUser = new ArrayList<>();
+    protected User user1 = new User("sergio", "1234", "1234", "1234", "1234", "1234" ,"1234", "1234", new ArrayList<Order>());
+    protected User user2 = new User("pablo", "1234", "1234", "1234", "1234","1234" ,"1234", "1234", new ArrayList<Order>());
 
-    //listUser.add(new User("sergio", "1234"));
-
-    private static boolean check = false;
     //here is proccessed info on methods
     //sql pending
     public boolean login(String username, String password) {
@@ -46,7 +43,8 @@ public class SupermarketServer {
     }
 
     public User getUserInfo() {
-        User user = new User("prueba","sergio");
+        User user = new User();
+        user.setUsername("sergio");
         return user;
     }
 }

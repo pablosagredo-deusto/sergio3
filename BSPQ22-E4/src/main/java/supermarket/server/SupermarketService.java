@@ -7,7 +7,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import supermarket.serialization.User;
+import supermarket.domain.User;
 
 
 @Path("/server")

@@ -2,7 +2,7 @@ package donations.server;
 
 import org.junit.Test;
 
-import supermarket.serialization.User;
+import supermarket.domain.User;
 import supermarket.server.SupermarketServer;
 
 import org.junit.Before;
